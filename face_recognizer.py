@@ -74,6 +74,9 @@ class FaceRecognizer(object):
         """
         crop image patches, do resizing and prewhitening
         """
+        if len(bboxes) == 0:
+            return None
+
         img_size = np.asarray(image.shape)[0:2]
         n_faces = len(bboxes)
         faces = []
